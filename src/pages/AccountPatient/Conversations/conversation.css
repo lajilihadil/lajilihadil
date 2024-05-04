@@ -1,0 +1,49 @@
+#main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 600px; /* 100% de la hauteur de la vue (viewport height) */
+  }
+  
+  .self-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .image {
+    width: 90px;
+    height: 200px;
+    margin: auto;
+  }
+  
+  .image img {
+    max-width: 200px;
+    max-height: 200px;
+  }
+  
+  button {
+    margin-top: 20px;
+    background-color: #3498db; /* Couleur de fond */
+    color: #ffffff; /* Couleur du texte */
+    padding: 10px 20px; /* Espacement intérieur du bouton */
+    font-size: 16px; /* Taille de la police */
+    border: none; /* Suppression de la bordure */
+    border-radius: 5px; /* Coins arrondis */
+    cursor: pointer; /* Curseur de type main au survol */
+  }
+  
+  button:hover {
+    background-color: #2980b9; /* Couleur de fond au survol */
+  }
+  
+  /* Style pour le positionnement du lien */
+.Tappable-inactive{
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  
+ 
+
+  
+  

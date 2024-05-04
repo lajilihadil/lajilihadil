@@ -1,0 +1,329 @@
+.gray-background {
+ color: #9b9696; /* Couleur grise */
+ font-size: 15px;
+
+}
+
+
+.separator {
+  width: 100%;
+
+}
+
+
+.list_title::first-letter {
+  text-transform: uppercase;
+  
+}
+.left-content {
+  float: left; /* Pour aligner à gauche */
+  /* Ajoutez d'autres styles selon vos besoins */
+}
+
+
+.image-content {
+  padding: 5px; /* Espacement à l'intérieur de la bordure */
+  margin-bottom: 30px;
+  /* Ajout de styles pour centrer l'image */
+  display: flex; /* Utilisation de flexbox */
+  justify-content: center; /* Centrage horizontal */
+  align-items: center; /* Centrage vertical */
+}
+
+
+
+.tag-cloud-link {
+  font-size:15px;
+  background-color: #e1edf7;
+  display: inline-block;
+  border-radius: 20px;
+  border: 1px solid #ccc; /* Couleur de la bordure */
+  padding: 8px; /* Espacement autour du lien */
+  margin: 5px; /* Marge entre les liens */
+ 
+}
+
+.widget_tag_cloud {
+  display: flex; /* Utiliser Flexbox pour aligner les éléments sur la même ligne */
+}
+
+.widget_tag_cloud {
+  display: flex;
+  flex-wrap: wrap; /* Permettre le retour à la ligne des éléments */
+}
+
+.tag-cloud-link {
+  margin-right: 10px;
+  margin-bottom: 10px; /* Ajouter une marge en bas pour séparer les lignes */
+  white-space: nowrap; /* Empêcher les éléments de sauter à la ligne */
+}
+
+@media screen and (max-width: 600px) {
+  .tag-cloud-link {
+    flex-basis: 0%; /* Mettre deux éléments par ligne sur les écrans plus petits */
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .tag-cloud-link {
+    flex-basis: 100%; /* Mettre un élément par ligne sur les écrans encore plus petits */
+  }
+}
+
+
+
+.card-medecin {
+  display: flex; /* Utiliser flexbox pour la mise en page horizontale */
+  border: 1px solid #ccc; /* Bordure de la carte */
+  border-radius: 8px; /* Bordure arrondie */
+  margin-top: 40px; /* Ajouter un espacement en haut des cartes */
+  margin-bottom: 30px; /* Augmenter l'espacement entre les cartes */
+  padding: 15px; /* Espacement interne de la carte */
+}
+
+
+
+.card-medecin img {
+  max-width: 70px; /* Taille maximale de l'image */
+  max-height: 70px; /* Hauteur maximale de l'image */
+  width: auto; /* Permet à l'image de conserver ses proportions */
+  border-radius: 8px; /* Bordure arrondie pour l'image */
+  margin-right: 20px; /* Espacement entre l'image et le texte */
+}
+
+.card-medecin .card-body {
+  flex-grow: 1; /* Permet à la partie texte de la carte de remplir l'espace disponible */
+  width: 100%; /* Largeur maximale pour le contenu de la carte */
+  margin-left: -30px;
+}
+
+
+.card-medecin .card-text {
+  margin-bottom: 5px; 
+ 
+}
+
+.btn-custom {
+  background-color: rgb(232, 190, 7);
+  margin-left: -40px;
+}
+
+.carousel-container .control-arrow {
+  font-size: 24px;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%; /* Ajout du bord arrondi pour former un cercle */
+  width: 50px; /* Ajustement de la taille */
+  height: 50px; /* Ajustement de la taille */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.carousel-container .control-arrow:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.carousel-container .control-arrow.control-prev {
+  left: 10px;
+}
+
+.carousel-container .control-arrow.control-next {
+  right: 10px;
+}
+
+.image-content {
+  border-radius: 10px; /* Rayon des coins du cadre */
+  padding: 5px; /* Espace intérieur entre le cadre et l'image */
+}
+
+.image-content img {
+  max-width: 100%; /* Largeur maximale de l'image */
+  max-height: 100%; /* Hauteur maximale de l'image */
+  border-radius: 8px; /* Rayon des coins de l'image */
+}
+
+
+
+
+
+
+
+
+
+
+.sidebar__title{
+margin-left:65px;
+font-weight: bold;
+font-family:Arial, Helvetica, sans-serif;
+font-size: 25px;
+color:rgb(72, 166, 233);
+}
+
+#mags-related {
+  margin-top: -90px; /* Réduire l'espace en haut du bloc */
+}
+
+.magcatlabel{
+  border-radius: 10px;
+ height:10px;
+ font-size: 16px;
+}
+
+
+.pfslides-item {
+  display: flex;
+  margin-top: 110px;
+ 
+}
+
+
+/* Styles pour le bloc de question */
+.question-block {
+  border: 1px solid #ccc; /* Bordure de 1 pixel solide avec couleur grise */
+  border-radius: 10px; /* Coins arrondis */
+  padding: 20px; /* Espace intérieur */
+  max-width: 600px; /* Largeur maximale du bloc */
+  margin: 0 auto; /* Centrer horizontalement */
+}
+
+/* Styles pour l'image du médecin */
+.doctor-image {
+  width: 100px; /* Largeur de l'image */
+  height: auto; /* Hauteur automatique pour maintenir les proportions */
+  border-radius: 50%; /* Pour une forme de cercle */
+}
+
+/* Styles pour les informations du médecin */
+.doctor-info {
+  margin-left: 20px; /* Marge à gauche pour espacement */
+}
+
+/* Styles pour la question médicale */
+.question {
+  margin-top: 20px; /* Marge en haut pour espacement */
+}
+
+/* Styles pour les titres */
+h3, h4 {
+  margin: 0; /* Supprimer les marges par défaut */
+}
+
+/* Styles pour le paragraphe */
+p {
+  margin: 5px 0; /* Marge en haut et en bas pour espacement */
+}
+
+.question-container {
+  display: flex; /* Utiliser flexbox pour la mise en page */
+}
+
+.question-block, .other-block {
+  border: 1px solid #ccc; /* Bordure de 1 pixel solide avec couleur grise */
+  border-radius: 10px; /* Coins arrondis */
+  padding: 20px; /* Espace intérieur */
+  width: 50%; /* Chaque bloc occupe 50% de la largeur */
+  box-sizing: border-box; /* Inclure la bordure et le remplissage dans la largeur totale */
+  margin-right: 20px; /* Marge entre les blocs */
+}
+
+.doctor-info {
+  margin-bottom: 20px; /* Espace entre l'image et les informations du médecin */
+}
+
+.doctor-image {
+  width: 100px; /* Largeur de l'image du médecin */
+  border-radius: 50%; /* Arrondir l'image */
+  margin-right: 20px; /* Espace à droite de l'image */
+}
+
+.sidebar__box {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.sidebar__box li {
+  background: none;
+  padding-right: 20px;
+}
+
+.sidebar__box li a {
+  text-decoration: none;
+}
+
+.sidebar__box h2 {
+  margin-top: 10px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 170%;
+  
+}
+
+.sidebar__box p {
+  font-size: 14px;
+  color: #3C3C3B;
+}
+
+.sidebar__box .profile__flex {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  text-align: left!important;
+  margin-right: 0!important;
+}
+
+.sidebar__box .profile__flex img.doctor-image {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}
+
+.sidebar__box .profile__label--name {
+  font-size: 16px;
+  color: #0696D6;
+}
+
+.sidebar__box .profile__label--spee {
+  font-size: 12px;
+  color: #7C878E;
+}
+
+.sidebar__box p.response {
+  font-size: 14px;
+  font-weight: 600;
+  color: #3C3C3B;
+}
+
+.sidebar__box a.response-link {
+  display: inline-block;
+  padding: 8px 20px;
+  color: #0696D6;
+  background-color: #FCFCFC;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+.sidebar__box a.response-link:hover {
+  background-color: #EDEDED;
+}
+
+.sidebar__box li {
+  list-style-type: none; /* annuler les points de liste */
+  padding-right: 20px;
+}
+
+
+.pfwidgettitle{
+  font-weight: bold;
+font-family:Arial, Helvetica, sans-serif;
+font-size: 25px;
+color:rgb(72, 166, 233);
+}
+
+
+
+
+

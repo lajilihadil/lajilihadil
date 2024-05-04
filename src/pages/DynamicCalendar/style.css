@@ -1,0 +1,289 @@
+/* Import Google font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+
+.wrapper{
+  width: 450px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+}
+.wrapper header{
+  display: flex;
+  align-items: center;
+  padding: 25px 30px 10px;
+  justify-content: space-between;
+}
+header .icons{
+  display: flex;
+}
+header .icons span{
+  height: 38px;
+  width: 38px;
+  margin: 0 1px;
+  cursor: pointer;
+  color: #878787;
+  text-align: center;
+  line-height: 38px;
+  font-size: 1.9rem;
+  user-select: none;
+  border-radius: 50%;
+}
+.icons span:last-child{
+  margin-right: -10px;
+}
+header .icons span:hover{
+  background: #f2f2f2;
+}
+header .current-date{
+  font-size: 1.45rem;
+  font-weight: 500;
+}
+.calendar{
+  padding: 20px;
+}
+.calendar ul{
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  text-align: center;
+}
+.calendar .days{
+  margin-bottom: 20px;
+}
+.calendar li{
+  color: #333;
+  width: calc(100% / 7);
+  font-size: 1.07rem;
+}
+.calendar .weeks li{
+  font-weight: 500;
+  cursor: default;
+}
+.calendar .days li{
+  z-index: 1;
+  cursor: pointer;
+  position: relative;
+  margin-top: 30px;
+}
+.days li.inactive{
+  color: #aaa;
+}
+.days li.active{
+  color: #fff;
+}
+.days li::before{
+  position: absolute;
+  content: "";
+  left: 50%;
+  top: 50%;
+  height: 40px;
+  width: 40px;
+  z-index: -1;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+.days li.active::before{
+  background: #107aca;
+}
+.days li:not(.active):hover::before{
+  background: #f2f2f2;
+}
+/****************************************/
+.day-container {
+  border: 1px solid #ccc; /* Ajoute une bordure de 1px solide grise */
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.hour-container {
+  margin-right: -5px !important; /* Réduit l'espacement horizontal entre les cadres des heures */
+}
+.icons {
+  display: flex;
+  justify-content: flex-end; /* Alignez les icônes à droite */
+}
+
+.arrow-left {
+  margin-right: 10px; /* Ajoute un espacement à droite pour la flèche gauche */
+}
+.selected-option {
+  background-color: #eee;
+  border-radius: .5rem;
+  overflow: hidden;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.selected-option div{
+  position: relative;
+
+  width: 6rem;
+  padding: 0 2.8rem 0 .5rem;
+  text-align: center;
+  cursor: pointer;
+}
+
+
+.selected-option div.active::after{
+  transform: translateY(-50%) rotate(225deg);
+}
+
+.profile__photo {
+max-width: 100%;
+    height: auto;
+    border-radius: 10%;}
+    :root {
+      --primary: #111;
+      --secondary: #fd0;
+  }	
+  
+ 
+  
+  .select-box {
+      position: relative;
+  
+      width: 26rem;
+      margin: 7rem auto;
+  }
+  
+  .select-box input {
+      width: 100%;
+      padding: 1rem .6rem;
+      font-size: 1.1rem;
+      
+      border: .1rem solid transparent;
+      outline: none;
+  }
+  
+  input[type="tel"] {
+      border-radius: 0 .5rem .5rem 0;
+  }
+  
+  .select-box input:focus {
+      border: .1rem solid var(--primary);
+  }
+  
+  .selected-option {
+      background-color: #eee;
+      border-radius: .5rem;
+      overflow: hidden;
+  
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+  }
+  
+  .selected-option div{
+      position: relative;
+  
+      width: 6rem;
+      padding: 0 2.8rem 0 .5rem;
+      text-align: center;
+      cursor: pointer;
+  }
+  
+ 
+  
+  .select-box .options {
+      position: absolute;
+      top: 4rem;
+      
+      width: 100%;
+      background-color: #fff;
+      border-radius: .5rem;
+  
+      display: none;
+  }
+  
+  .select-box .options.active {
+      display: block;
+  }
+  
+  .select-box .options::before {
+      position: absolute;
+      content: "";
+      left: 1rem;
+      top: -1.2rem;
+  
+      width: 0;
+      height: 0;
+      border: .6rem solid transparent;
+      border-bottom-color: var(--primary);
+  }
+  
+  input.search-box {
+      background-color: var(--primary);
+      color: #fff;
+      border-radius: .5rem .5rem 0 0;
+      padding: 1.4rem 1rem;
+  }
+  
+  .select-box ol {
+      list-style: none;
+      max-height: 23rem;
+      overflow: overlay;
+  }
+  
+  .select-box ol::-webkit-scrollbar {
+      width: 0.6rem;
+  }
+  
+  .select-box ol::-webkit-scrollbar-thumb {
+      width: 0.4rem;
+      height: 3rem;
+      background-color: #ccc;
+      border-radius: .4rem;
+  }
+  
+  .select-box ol li {
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      cursor: pointer;
+  }
+  
+  .select-box ol li.hide {
+      display: none;
+  }
+  
+  .select-box ol li:not(:last-child) {
+      border-bottom: .1rem solid #eee;
+  }
+  
+  .select-box ol li:hover {
+      background-color: lightcyan;
+  }
+  
+  .select-box ol li .country-name {
+      margin-left: .4rem;
+  }    
+  tr:hover {background-color: #e7f4fd;}  
+  .pro-sec1 {
+    background: white;
+    border-radius: 7px;
+    padding: 3%;
+    margin-bottom: 1em;
+    /* text-align: center; */
+  }
+  .pro-sec1 ul.sgd {
+    border-top: 1px solid #d6d6d6;
+    padding-top: 11px;
+    text-align: center;
+  }
+  .pro-sec1 .view li {
+    font-size: 12px;
+  }
+  .pro-sec1 .view li span {
+    margin-right: 5px;
+  }
+  .single-data .view {
+    margin-bottom: 10px;
+  }
+  .pro-sec1 .view li i {
+    color:#0d72b9;
+    font-size: 16px;
+    margin-right: 5px;
+  }

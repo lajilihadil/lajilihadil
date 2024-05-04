@@ -1,0 +1,88 @@
+/* OurDoctors.css */
+
+
+  
+  /* Styles for the doctor card */
+  .doctor{
+    width: 80%;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+    
+  }
+  
+  
+  .card-image-container {
+    margin-left:28%;
+    margin-top:20px;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* Pour obtenir une forme de cercle */
+    overflow: hidden; /* Masquer le contenu qui dépasse */
+    display: flex; /* Utiliser Flexbox */
+    justify-content: center; /* Centrer horizontalement */
+    align-items: center; /* Centrer verticalement */
+    margin-bottom:-15px;
+    border: 3px solid black;
+  }
+  
+
+  
+  
+  
+  
+  .cadre-image {
+    object-fit: cover;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+  }
+  
+  .cadre-content {
+    padding: 3rem;
+  }
+  
+  .cadre-title-doctor {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-top: -20px;
+    margin-bottom: -20px;
+  }
+  
+  .cadre-specialties {
+    color: #6c757d;
+  }
+  
+  /* listMedecin.css */
+
+/* Barre de recherche */
+.search-container {
+    position: relative;
+    margin-bottom: 40px; /* Ajouter un espace en bas du conteneur de recherche */
+  }
+  
+  .search-input {
+    width: 50%; /* Ajustez la largeur selon vos préférences */
+    padding: 8px;
+    margin-bottom: 10px;
+  }
+  
+  .custom-row {
+    display: flex;
+    justify-content: center; /* Centrer horizontalement */
+    align-items: center; /* Centrer verticalement */
+  }
+
+  .custom-button{
+    margin-top:50px;
+    height:40px;
+ 
+  }
+
+ 
+
+  
+
+  
+  

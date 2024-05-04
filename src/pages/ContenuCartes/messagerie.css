@@ -1,0 +1,75 @@
+.page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .home-container {
+    background-color: #107aca;
+    padding: 30px;
+    width: 100%;
+  }
+  
+  .content {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .text-container {
+    width: 50%;
+  }
+  
+  .text-container h4 {
+    font-weight: bold;
+    margin-top: 0;
+  }
+  
+  .paragraphe {
+    text-align: left;
+  }
+  
+  .image-container {
+    width: 50%;
+  }
+  
+  .image-container img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .section {
+    padding: 30px;
+  }
+  
+  .large-cards {
+    margin-top: 20px;
+  }
+  
+  .large-cards__tabs-title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .large-cards__tabs ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .large-cards__tabs ul li {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #666;
+  }
+  
+  .footer {
+    background-color: #f4f4f4;
+    padding: 20px 0;
+    width: 100%;
+    text-align: center;
+  }
+  .section {
+    padding: 30px;
+    width: 100%;
+    box-sizing: border-box; /* pour inclure le padding dans la largeur totale */
+  }  

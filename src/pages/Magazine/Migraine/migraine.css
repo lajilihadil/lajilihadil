@@ -1,0 +1,10 @@
+.tag-cloud-link {
+    font-size:15px;
+    background-color: rgb(227, 243, 246);
+    display: inline-block;
+    border-radius: 20px;
+    border: 1px solid #ccc; /* Couleur de la bordure */
+    padding: 8px; /* Espacement autour du lien */
+    margin: 5px; /* Marge entre les liens */
+   
+  }

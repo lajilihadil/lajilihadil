@@ -1,0 +1,326 @@
+.section-content {
+  font-size: 16px; /* Taille de police personnalisée */
+  /* Aligner le contenu à gauche */
+}
+.content-info {
+  background-color: #EFF5FB; /* Choisissez la couleur de fond que vous préférez */
+}
+.centered-text {
+  font-weight: bold;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; /* Assure que le conteneur occupe toute la hauteur */
+}
+.profile__photo img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10%;
+  }
+.profile__photo {
+    margin-right: 20px; /* Espacement à droite de l'image */
+  }
+.profile__header{
+    margin-top: "15px";
+    background-color: #2b4660e6;
+}
+.profile__flex {
+    display: flex;
+    align-items: center; /* Alignement vertical des éléments */
+  }
+  .profile__content {
+    display: flex;
+    align-items: center; /* Alignement vertical des éléments */
+  }
+  /******************************/
+  .dl-profile-nav-links li {
+    margin-top: 15px;
+    text-decoration: none; /* Supprimer le soulignement */
+    list-style: none;
+    position: relative;
+    cursor: pointer;
+  }
+  .dl-profile-nav-links li a {
+    text-decoration: none;
+  }
+  .dl-profile-nav-links li::before{
+    content: "";
+    background-color: blue;
+    position: absolute;
+    left: 0;
+    bottom: -0.3rem;
+    height:3px ;
+    width: 0;
+    transition: 0.3s ease-in-out;
+  }
+  .dl-profile-nav-links li:hover::before{
+    content: "";
+    background-color: blue;
+    position: absolute;
+    left: 0;
+    bottom: -0.3rem;
+    height:3px ;
+    width: 100%;
+  }
+  .infoo {
+    display: flex;
+    justify-content: space-between; /* Les éléments sont espacés uniformément sur la ligne */
+    background-color: #E7F4FD;
+  }
+  .infoo-left,
+.infoo-right {
+    border: 1px solid #E7F4FD; /* Ajoute une bordure grise autour de chaque partie */
+    border-radius: 10px;
+    padding: 0 10px; /* Ajoutez un espacement interne si nécessaire */
+    background-color: #E7F4FD;
+}
+.card {
+    position: relative;
+    width: 400px;
+    height: 300px;
+    margin: 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+  }
+.infoo-right .card {
+    flex-direction: row;
+    border: 1px solid #ddd; /* Ajoute une bordure grise autour de chaque partie */
+    position: relative;
+    width: 70%;
+    display: flex;
+    margin: 15px;
+    justify-content: space-between; /* Les éléments sont espacés uniformément sur la ligne */
+}
+.infoo-right .card .card-left,
+.card-right {
+    border: 1px solid #ccc ; /* Ajoute une bordure autour de chaque partie */
+    padding: 10px; /* Ajoute un espacement interne */
+    width: calc(50% ); /* Définit la largeur de chaque partie (50% de la largeur moins un espace de 5px) */
+    height: 50%;
+    box-sizing: border-box; /* Inclut la bordure et le padding dans la largeur */
+  }
+  .infoo-right .card .card-section {
+    flex: 1;
+    padding: 10px;
+  }
+  /* Pour les écrans de petite taille */
+@media only screen and (max-width: 600px) {
+    .profile__flex {
+      flex-direction: column; /* Affichage en colonne pour les écrans étroits */
+      align-items: center;
+      text-align: center; /* Centrer le contenu */
+    }
+    .profile__photo {
+      margin-right: 0; /* Supprimer la marge à droite */
+      margin-bottom: 10px; /* Ajouter une marge en bas */
+    }
+  }
+  /* Pour les écrans de taille moyenne à grande */
+  @media only screen and (min-width: 601px) {
+    .profile__flex {
+      justify-content: space-between; /* Affichage en ligne avec un espacement entre les éléments */
+      align-items: center;
+    }
+    .infoo {
+      flex-wrap: wrap; /* Permettre le passage à la ligne pour les éléments d'infoo */
+    }
+    .card {
+      width: calc(50% - 30px); /* 50% de largeur avec un espace de 15px entre les éléments */
+    }
+  }
+  /*sdrtyuioutyredrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr*/
+  /* single doc-page */
+.single-detail {
+  margin: 3em 0;
+}
+.single-detail .single-pic img{
+  width: 150px;
+  height: 150px;
+  max-width: 290px;
+  max-height: 290px;
+  border-radius: 10%;
+ margin: 0 auto;
+ margin-top: 20px;
+  display: block;
+  box-shadow:  0 0 2px 2px rgb(241, 245, 251);
+}
+.single-data h4 {
+  font-size: 17px;
+  margin: 1.8em 0 3px;
+  color: #0D72B9;
+  text-align: center;
+}
+.pro-sec ul.sgd {
+  border-top: 1px solid #D6D6D6;
+  padding-top: 11px;
+  text-align: center;
+}
+.pro-sec .view li {
+  font-size: 12px;
+}
+.pro-sec .view li span {
+  margin-right: 5px;
+}
+.single-data .view {
+  margin-bottom: 10px;
+}
+.pro-sec .view li i {
+  color:#0d72b9;
+  font-size: 16px;
+  margin-right: 5px;
+}
+.single-data p {
+  font-size: 13px;
+  margin: 0 0 1em;
+  padding: 0 0 1em;
+  border-bottom: 1px solid #D6D6D6;
+  font-weight: bold;
+  color: rgb(205, 178, 3);
+  text-align: center;
+}
+.single-data ul li {
+  color: #6F6F6F;
+  font-size: 15px;
+  margin-bottom: 0.5em;
+}
+.single-data ul li a {
+  color: #616161;
+  font-size: 13px;
+  text-decoration: none;
+  transition: 0.3s all;
+}
+.single-data ul li a:hover {
+color:#26a5ff;
+  }
+.single-data ul li i {
+  margin-right: 0.7em;
+  font-size: 14px;
+  color: #0D72B9;
+}
+.single-data ul li:last-of-type i {
+font-size: 16px;
+}
+.single-info h5  {
+  color: #D5D20B;
+  margin-right: 0.3em;
+  font-size: 19px;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: -90px;
+}
+.single-serv h5 i {
+  color: #EFDB00;
+  margin-right: 0.3em;
+  font-size: 19px;
+  margin-left: -170px;
+}
+.single-info {
+  background: white;
+  border-radius: 7px;
+  padding: 2%;
+  box-shadow: 0px 0px 2px #8080806b;
+}
+.single-info p {
+  color: #616161;
+}
+.single-info h5 {
+border-bottom: 1px solid #D4D4D4;
+padding-bottom: 0.5em;
+font-size: 17px;
+ margin-top: 0; /* Supprime la marge supérieure */
+  margin-bottom: 10px; /* Ajuste la marge inférieure */}
+.single-serv h5{
+  border-bottom: 1px solid #D4D4D4;
+  padding-bottom: 0.5em;
+  font-size: 17px;
+  margin-top: 0; /* Supprime la marge supérieure */
+  margin-bottom: 10px; /* Ajuste la marge inférieure */
+}
+.single-serv ul li a{
+  padding: 2px 10px;
+  background: #4AB3FD;
+  border-radius: 7px;
+  color: white;
+  text-decoration: none;
+  transition: 0.3s all;
+}
+.single-serv ul li a:hover {
+  background: #3795D8;
+}
+.single-serv ul li {
+  margin-bottom: 0.5em;
+}
+.serv-cont {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.single-serv {
+  background: white;
+  border-radius: 7px;
+  padding: 2%;
+  box-shadow: 0px 0px 2px #8080806b;
+  margin-bottom: 1em;}
+.serv-cont .single-serv {width: 49%;margin: 0 1% 0 0;background: white;border-radius: 7px;padding: 2%;box-shadow: 0px 0px 2px #8080806b;}
+.serv-cont .single-serv:last-of-type {
+  width: 50%;
+  margin: 0;
+}
+.pro-sec {
+  background: white;
+  border-radius: 7px;
+  padding: 3%;
+  box-shadow: 0px 0px 2px #8080806b;
+  margin-bottom: 1em;
+  /* text-align: center; */
+}
+.serv-cont .single-serv ul {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.serv-cont .single-serv ul li {
+  width:50%;
+}
+.serv-cont .single-serv ul li a {
+  background-color: transparent;
+  color: grey;
+}
+.serv-cont .single-serv ul li a:hover {
+  background-color: transparent;
+  color: #4AB3FD;
+}
+.serv-cont .single-serv ul li i {
+  color:#0bd51f;
+}
+.dl-profile-skills {
+  display: flex;
+  flex-wrap: wrap;}
+  .dl-profile-skill-chip {
+    border: 1px solid #D0E9FB; /* Ajoute une bordure de 1 pixel autour de chaque élément */
+    border-radius: 5px;
+    font-size: 14px;
+    padding: 5px; /* Ajoute un espace à l'intérieur de la bordure pour plus de lisibilité */
+    margin: 5px; /* Ajoute un espace entre chaque élément */
+    display: inline-block; /* Pour que les éléments s'affichent en ligne */
+    background-color: #D0E9FB;
+  }
+.dl-openings-day {
+  margin-top: 20px;
+  display: flex; /* Utilisez flexbox pour aligner les éléments sur la même ligne */
+  align-items: center; /* Alignez les éléments verticalement au centre */
+}
+.dl-openings-day-label {
+  margin-right: 20%; /* Ajoutez un espace à droite du libellé du jour */
+}
+.dl-openings-day-slots{
+  margin-top: -10px;
+  margin-left: 30px;
+}
+.dl-openings-day-slots img {
+  margin-right: 20px; /* Ajoutez un espace à droite de l'image */
+}

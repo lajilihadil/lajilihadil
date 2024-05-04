@@ -1,0 +1,125 @@
+/* Styles par défaut */
+.page-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* La première colonne occupe deux fois la largeur de la deuxième colonne */
+    gap: 20px; /* Espacement entre les colonnes */
+}
+
+.left-column {
+    padding: 20px;
+    width: 100%; /* Augmente la largeur de la colonne gauche */
+}
+
+  
+.right-column {
+    width:500px;
+    padding: 20px;
+   background-color: #ffffff;
+}
+
+.right-column {
+    width: calc(100% - 20px); /* Réduit la largeur pour tenir compte de l'espacement entre les colonnes */
+    max-height: none; /* Réinitialise la hauteur maximale */
+    background-color: transparent; /* Annule l'arrière-plan */
+    display: flex; /* Utilise un conteneur flex pour les éléments enfants */
+    flex-direction: column; /* Affiche les éléments enfants en colonne */
+    justify-content: space-between; /* Répartit les éléments enfants avec un espacement égal */
+    padding: 10px; /* Ajoute un padding pour un meilleur espacement */
+    align-self: flex-start; /* Aligne la partie droite en haut */
+    margin-top: 180px;
+}
+
+.sidebar-widget {
+    width: calc(100% - 20px); /* Réduit la largeur pour tenir compte de l'espacement entre les colonnes */
+    max-height: none; /* Réinitialise la hauteur maximale */
+    background-color: transparent; /* Annule l'arrière-plan */
+    display: flex; /* Utilise un conteneur flex pour les éléments enfants */
+    flex-direction: column; /* Affiche les éléments enfants en colonne */
+    justify-content: space-between; /* Répartit les éléments enfants avec un espacement égal */
+    padding: 10px; /* Ajoute un padding pour un meilleur espacement */
+    align-self: flex-start; /* Aligne la partie droite en haut */
+    margin-top: 20px; /* Réglez la marge supérieure selon vos besoins */
+}
+
+.right-column .question-block {
+    width: 100%; /* Occupe toute la largeur */
+}
+
+.profile__labels {
+    display: flex;
+    flex-direction: column; /* Affiche les éléments enfants en colonne */
+    align-items: flex-start; /* Aligne les éléments enfants à gauche */
+}
+
+  
+/* Styles pour les écrans plus petits */
+@media screen and (max-width: 768px) {
+    .page-container {
+        grid-template-columns: 1fr; /* Une seule colonne lorsque l'écran est plus petit */
+    }
+  
+    .right-column,
+    .sidebar-widget {
+        width: calc(100% - 20px); /* Réinitialise la largeur */
+        max-height: none; /* Réinitialise la hauteur maximale */
+        background-color: transparent; /* Annule l'arrière-plan */
+        display: flex; /* Utilise un conteneur flex pour les éléments enfants */
+        flex-direction: column; /* Affiche les éléments enfants en colonne */
+        justify-content: space-between; /* Répartit les éléments enfants avec un espacement égal */
+        padding: 10px; /* Ajoute un padding pour un meilleur espacement */
+        align-self: flex-start; /* Aligne la partie droite en haut */
+        margin-top: 20px; /* Réglez la marge supérieure selon vos besoins */
+    }
+  
+    .right-column .question-block {
+        width: 100%; /* Occupe toute la largeur */
+    }
+  
+    .right-column .sidebar__title {
+        font-size: 16px; /* Réduit la taille de la police */
+    }
+}
+
+
+.question-block,
+.sidebar-widget
+ {
+  display: flex; /* Utilise un conteneur flex */
+  flex-direction: column; /* Affiche les éléments en colonne */
+  width: 100%; /* Définit la largeur à 100% */
+}
+
+
+
+.sidebar__box {
+    display: flex; /* Utilise un conteneur flex */
+    flex-direction: column; /* Affiche les éléments en colonne */
+    width: 100%; 
+    font-family: Arial, sans-serif;
+    margin-top: 20px;
+  }
+  
+  .accordion-menu {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .dropdownlink {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .dropdownlink img {
+    margin-right: 10px;
+  }
+  
+  .dropdownlink a {
+    text-decoration: none;
+    color: #333; /* Couleur du texte */
+  }
+  
+  .dropdownlink i {
+    margin-left: auto; /* Pousse l'icône à droite */
+  }
+  

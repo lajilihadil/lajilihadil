@@ -1,0 +1,227 @@
+/* Ajoutez ces styles à votre fichier CSS */
+body{
+  overflow-x: hidden;
+}
+
+/* Style pour tous les éléments de type select */
+.form-select {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 16px;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  background-color: #fff;
+  margin-bottom: 10px; 
+  
+}
+
+/* Style pour le label associé au select */
+.label-select {
+  margin-bottom: 5px;
+  display: block;
+  font-weight: bold;
+}
+
+
+
+.col-md-6{
+  padding-right: 90px;
+}
+
+.col-lg-6{
+  padding-left: 60px;
+}
+
+/* Ajoutez ces styles à votre fichier CSS */
+.custom-btn {
+  font-size: 16px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  background-color: #3498db; /* Couleur bleue */
+  color: #fff; /* Couleur du texte blanc */
+}
+
+.custom-btn:hover {
+  background-color: #2980b9; /* Couleur bleue plus foncée au survol */
+}
+
+
+
+/* Ajoutez ces styles à votre fichier medecin.css */
+
+.form-label {
+  text-align: left;
+  display: block;
+  margin-bottom: 0.5rem;
+
+}
+
+/* Facultatif : ajustez la largeur des labels pour un meilleur alignement visuel */
+.col-xs-12 .form-label {
+  width: 100%;
+}
+
+/* Ajoutez plus de styles au besoin pour personnaliser l'apparence de votre formulaire */
+.custom-form-column {
+  margin-left: 20px; /* Ajustez la valeur selon vos besoins */
+}
+
+/* Ajoutez ce CSS dans votre fichier CSS ou dans le style du composant React */
+
+.hero-from-yellow__content {
+  text-align: left; /* Aligner le contenu à gauche */
+}
+
+.hero-form-yellow__list {
+  margin-left: -70px; /* Réinitialise la marge à gauche à zéro */
+  padding-left: 0; /* Réinitialise le padding à gauche à zéro */
+  list-style: none; /* Supprime les puces de la liste */
+}
+
+.icon-text {
+  display: flex; /* Utilise le modèle de boîte flexible pour aligner les éléments horizontalement */
+  align-items: center; 
+  margin-top: -5px;
+ }
+
+.arrow-icon {
+  margin-right: 10px; /* Ajoute une marge à droite de l'icône pour l'espacement */
+}
+
+.hero-form-yellow-title {
+  text-align: center;
+}
+
+
+
+.form-header {
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-weight: bold;
+  margin-bottom: 25px;
+  font-size: 20px;
+  text-align: center;
+  color: #7c9fc3;
+  /* Espacement en bas du texte */
+}
+
+.title--large:hover 
+{
+  color: rgb(6, 96, 138); /* Changez la couleur au survol selon vos préférences */
+  font-size: 0.5rem; /* Ajustez la taille de la police selon vos préférences */
+}
+
+.title--xxxlarge {
+  font-size: 35px; /* Ajustez la taille de la police selon vos préférences */
+}
+
+.paragraph {
+  font-size: 18px; /* Ajustez la taille de la police selon vos préférences */
+}
+
+.title--large,
+.title--xxxlarge,
+.paragraph {
+font-family:"Georgia, 'Times New Roman', Times, serif";
+  text-align: left;
+  padding-right: 100px;
+  /* Optionnel : ajoutez des points de suspension (...) si le texte dépasse */
+}
+
+
+.title.title--large {
+  font-size: 24px; /* Ajustez la taille de la police selon vos préférences */
+  font-weight: bold; /* Ajoute une épaisseur de police */
+  color: #333; /* Ajustez la couleur du texte selon vos préférences */
+  margin-bottom: 10px; /* Ajoute une marge en bas pour l'espacement */
+  /* Ajoutez d'autres styles CSS selon vos besoins */
+}
+
+/* Partie gauche (titre) */
+.hero-form-yellow__content {
+  flex: 1;
+  padding: 20px;
+  box-sizing: border-box;
+  min-width: 300px; /* Ajustez la largeur minimale de la partie gauche selon vos préférences */
+}
+
+/* Partie droite (formulaire) */
+.col-md-5 {
+  flex: 1;
+  padding: 20px;
+  box-sizing: border-box;
+  min-width: 300px; /* Ajustez la largeur minimale de la partie droite selon vos préférences */
+}
+
+/* Média query pour ajuster le style lorsqu'on minimise la page */
+@media (max-width: 768px) {
+  /* Réinitialisez les styles de largeur pour permettre le passage en dessous */
+  .container, .hero-form-yellow__content, .col-md-5 {
+    flex: auto;
+    min-width: auto;
+  }
+}
+
+.arrow-icon {
+  margin-bottom: 18px; /* Ajustez la marge selon vos préférences */
+}
+
+/* Styles pour la section gauche (titre) */
+.section__inner {
+  width: 20%; /* Ajustez la largeur de la partie gauche selon vos besoins */
+  padding: 10px; /* Ajustez selon vos préférences */
+  box-sizing: border-box;
+}
+
+/* Style pour la partie gauche (titre) */
+.hero-form-yellow__content {
+  flex: 1; /* Occupe l'espace disponible */
+  margin-top:40px;
+  padding-right: 30px; /* Ajustez selon vos préférences */
+  box-sizing: border-box;
+}
+
+/* Ajoutez ces styles à votre fichier CSS ou dans le style du composant React */
+
+.selected {
+  font-weight: bold;
+}
+
+.underline-magical {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px; /* Hauteur de la ligne ondulée */
+  width: 63%; /* Largeur de la ligne ondulée */
+  background: linear-gradient(to right, #13679f, #91c8cc 50%, transparent 30%); /* Dégradé pour simuler l'effet d'onde */
+  background-size: 200% 200%; /* Ajustez la taille en fonction de la longueur de l'onde */
+  animation: wave 2s linear infinite; /* Animation pour l'effet d'onde */
+}
+
+@keyframes wave {
+  0%, 100% {
+    background-position: 200% 0;
+  }
+  50% {
+    background-position: 0 0;
+  }
+}
+
+.highlight-text {
+  font-size: 40px;
+  color:#3d6380;
+  position: relative;
+  
+  z-index: 1; /* Assure que le texte apparaît au-dessus de la ligne ondulée */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

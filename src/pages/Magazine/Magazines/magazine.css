@@ -1,0 +1,24 @@
+.widget__cloud {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 60px;
+}
+  
+  .tag-cloud-link {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+  }
+  
+  .tag-cloud-link img {
+    margin-right: 10px;
+  }
+  
+  .breadcrumb-separator {
+    display: inline; /* Pour afficher le séparateur sur la même ligne */
+    margin: 0 5px; /* Ajustez la marge selon vos préférences */
+  }
+  

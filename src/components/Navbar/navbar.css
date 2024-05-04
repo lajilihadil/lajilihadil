@@ -1,0 +1,85 @@
+/* navbar.css */
+
+
+
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+ 
+ 
+  width: 100vw; 
+}
+
+.logo {
+  padding: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+/* Couleur de fond du bouton lorsque ce n'est pas survolé */
+.btn {
+  font-weight: bold;
+  background-color: #fdf6f6;
+  color: #000000; /* Couleur du texte */
+  border-color: #acd0e8; /* Couleur de la bordure */
+}
+
+/* Couleur de fond du bouton au survol */
+.btn:hover {
+  background-color: #e6f6ff; /* Nouvelle couleur de fond au survol */
+ color: #000000;
+}
+
+@media (max-width: 768px) {
+  .login-button {
+    margin-left: 4vw; /* Ajustez selon vos besoins */
+  }
+}
+
+
+.user-login {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.user-login a {
+  margin-right: 20px;
+  text-decoration: none;
+  font-style: initial;
+  color: #ffffff;
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  padding-right: 20px;
+}
+
+/* Couleur différente pour "Gérez mes RDVs" */
+.user-login a:last-child {
+  color: #e2dcdc;
+  padding-right: 20px;
+}
+
+/* Style pour l'icône utilisateur */
+.user-icon {
+  font-size: 20px;
+  padding-right: 10px;
+  color: #f7f0f0;
+  margin-top: 10px;
+  padding-left: 30px;
+  
+}
+
+
+.navbar-nav{
+  font-weight: bold;
+}
+
+.navbar-brand {
+  font-weight: bold;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #efeeee;
+}

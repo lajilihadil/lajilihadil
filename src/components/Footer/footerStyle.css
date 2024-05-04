@@ -1,0 +1,119 @@
+/* footerStyles.css */
+
+/* Ajoutez ici votre code CSS spécifique pour le footer */
+.dl-white-bg {
+  background-color: #eaf2f6;
+  width: 100%; 
+}
+
+.container-links{
+  display:flex;
+  justify-content:space-between;
+  align-items: flex-start;
+}
+
+.dl-footer-column {
+  flex: 2; /* Les colonnes occupent le même espace */
+  margin-right: 20px; /* Marge à droite pour l'espace entre les colonnes */
+}
+.dl-footer-column:last-child {
+  margin-right: 0;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  padding: 5px 0; /* Ajoute un espacement en haut et en bas des éléments de la liste */
+padding-left: 70px; /* Ajoute un espacement à gauche du texte */
+text-align: left; /* Aligne le texte à gauche */
+}
+
+.col-3 {
+  text-align: left; /* Aligne le contenu à gauche à l'intérieur de chaque colonne */
+}
+
+.col-3 h2 {
+  font-size: 20px;
+  color: #000000;
+  padding-left: 70px;
+  text-align: left; /* Aligne le texte à gauche à l'intérieur de chaque h2 dans les colonnes col-3 */
+}
+
+.col-3:nth-child(2) h2 {
+  color: #000000; /* Couleur du texte pour le deuxième bloc */
+  font-size: 20px;
+}
+
+.col-3:nth-child(3) h2 {
+  font-size: 20px;
+  color: #000000; /* Couleur du texte pour le troisième bloc */
+}
+
+/*pour la recherche */
+.seo-footer-directory {
+  list-style-type: none; /* Supprime les puces de la liste */
+  padding: 0; /* Supprime le remplissage de la liste */
+}
+
+.seo-footer-directory-link {
+  display: inline-block;
+  margin-right: 5px; /* Espacement entre les liens */
+}
+
+.dl-margin-b-8 {
+  margin-bottom: 8px; /* Ajoute une marge en bas de l'élément avec la classe dl-margin-b-8 */
+}
+
+
+h4{
+  font-size: 20px;
+  color: #3c5065;
+  padding-left: 70px;
+  text-align: left;
+}
+ 
+
+/* Styles pour le conteneur principal */
+.mt-24 {
+margin-top: 10px; /* Espacement en haut */
+text-align: left;
+padding-left: 70px;
+}
+
+
+
+/* Styles pour les liens dans la flexbox */
+.flex {
+display: flex;
+flex-wrap: wrap;
+}
+
+.flex a {
+
+text-decoration: none; /* Enlevez la soulignement des liens si nécessaire */
+margin-right: 10px; /* Espacement entre les liens */
+/* Ajoutez ici les styles communs à tous les liens */
+}
+
+/* Applique une taille de 24 pixels aux icônes */
+.social-icons i {
+font-size: 24px;
+padding-left : 70px;
+color: #333; /* Couleur par défaut des icônes */
+transition: color 0.3s ease; /* Ajoute une transition fluide */
+}
+
+/* supprimer les souslignements */
+a {
+text-decoration: none;
+color:#080808;
+}
+
+
+.text-link-black {
+color: black;
+}
+

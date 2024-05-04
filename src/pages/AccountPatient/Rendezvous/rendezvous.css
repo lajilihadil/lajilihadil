@@ -1,0 +1,14 @@
+/* Styles pour la partie de gauche */
+.sr-only h1 {
+    text-align: left;
+  }
+  
+  .dl-desktop-appointments-view-list {
+    text-align: left;
+  }
+  
+  .flex.dl-justify-center {
+    justify-content: flex-start;
+  }
+  
+  

@@ -1,0 +1,100 @@
+.home-intro__step1 {
+  background-color: #001F3E;
+  display: flex;
+  color: white;
+}
+/* button */
+.home-intro__step1-choices {
+  margin-top: -20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width:85%;
+  height: 60vh; /* Ajustez la hauteur selon vos préférences */
+}
+.choice--large {
+  text-align: center;
+}
+.choice__link {
+  display: inline-block;
+}
+/* Ajouter de l'espace entre les choix */
+.choice {
+  margin-right: -70px;
+}
+/* Styler le bouton en blanc */
+.home-intro__link {
+  background-color: transparent; /* ou ajoutez votre couleur de fond souhaitée */
+  border: 1px solid rgb(245, 242, 242); /* ou ajustez la bordure selon vos préférences */
+  padding: 10px 20px;
+  cursor: pointer;
+}
+.choice__link {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  margin-left: 20px;
+  background: rgb(255, 255, 255);
+  width: 300px;
+  height: 300px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  transition: background 0.3s, color 0.3s; /* Ajout de la transition */
+}
+.choice__link:hover {
+  background: linear-gradient(to right, rgb(8, 141, 171), rgb(242, 250, 215)); /* Dégradation de couleur bleue au survol */
+  color: rgb(255, 255, 255); /* Nouvelle couleur de texte au survol */
+}
+.home-intro__link {
+  background-color: rgb(223, 213, 213); /* Couleur de fond des boutons */
+  color: #001F3F; /* Couleur du texte des boutons */
+  border: 1px solid white; /* Bordure des boutons (ajustez selon vos préférences) */
+}
+.title--xxlarge {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-weight: bold;
+  color: rgb(232, 239, 160);
+  opacity: 0;
+  animation: fadeIn 3.5s ease-in-out infinite; /* Animation de fondu en boucle */
+}
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+.xxlarge{
+  color:aqua
+}
+/*text fin*/
+.text-container a {
+  margin-top: -60px;
+  margin-bottom: 50px;
+  display: inline-block;
+  border-radius: 10px;
+  border: 2px solid white; /* Ajoutez une bordure blanche de 2 pixels */
+  padding: 15px; /* Ajoutez un peu de rembourrage pour l'espace autour du texte */
+}
+.text-container a:hover {
+  background-color: rgb(89, 169, 206); /* Ajoutez une couleur de fond blanche au survol */
+  color: #001F3F; /* Changez la couleur du texte au survol */
+}
+/* ignorer */
+.button-intro {
+  text-align: center;
+  margin-bottom: 40px;
+  margin-top: -40px; /* Ajustez la marge selon vos besoins */
+}
+.button-intro a {
+  color: white;
+  text-decoration: none;
+  font-size: 15px; /* Ajustez la taille de la police selon vos besoins */
+  transition: background-color 0.3s, color 0.3s; /* Ajoutez une transition pour un effet agréable */
+}
+.button-intro a:hover {
+  color: #1AE3F6;
+}
+.text-center {
+  text-align: center;
+}

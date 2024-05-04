@@ -1,0 +1,124 @@
+/* home.css */
+
+
+.page-container {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw; /* Ajuste la largeur à 100% de la page */
+  }
+  
+  .home-container {
+    background-color: #45a9f1;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%; /* Ajuste la largeur à 100% de la page */
+    padding-top: 30px;
+    padding-bottom: 80px;
+   
+  }
+    
+    .phrase-container {
+      text-align: center;
+      margin-left: 50px;
+      font-size: 40px;
+      font-family:Verdana, Arial, Helvetica, sans-serif;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+  
+    p{
+      color : #021652;
+      /*text-shadow: 0px 0px 8px rgb(84, 166, 238),
+                   0px 0px 12px rgb(177, 220, 247),
+                   0px 0px 16px rgb(0, 157, 255);*/
+    }
+  
+    .image-container {
+      flex: 1;
+      margin-left: 10%;
+      filter:drop-shadow(10px 7px 10px rgb(228, 157, 157)) 
+    }
+    
+    .image-container img {
+   
+      width: 100%; /* Ajuste la taille de l'image pour remplir la largeur de son conteneur */
+      max-height: 500px; /* Limite la hauteur maximale de l'image */
+      object-fit: cover; /* Ajuste le comportement du redimensionnement de l'image */
+      border-radius: 10px; /* Ajoute un peu de bord arrondi à l'image */
+    }
+  
+  
+    .input-group {
+        position: relative;
+      }
+      
+      #search-icon {
+        position: absolute;
+        top: 50%;
+        left: 10px; /* Ajustez la valeur en fonction de la mise en page souhaitée */
+        transform: translateY(-50%);
+        z-index: 2;
+      }
+      
+      .form-control {
+        padding-left: 40px; /* Assurez-vous d'ajuster la valeur pour éviter que le texte ne soit caché sous l'icône */
+      }
+      /*.input-group i.location-icon {
+      position: absolute;
+      right: 90px;  
+      top: 50%;
+      transform: translate(-50%, -50%);
+      background-color: red;  }*/
+    
+    
+  
+    .input-group input {
+      border: 1px solid #ebdcdc;
+      border-radius: 5px;
+      outline: none;
+      padding: 20px;
+      padding-left: 30px; /* Ajuste la marge à gauche pour laisser de l'espace pour l'icône de recherche */
+      padding-right: 20%; /* Ajuste la marge à droite pour laisser de l'espace pour l'icône de localisation */
+    }
+    
+    .input-group input::placeholder {
+      opacity: 0.7; /* Ajuste l'opacité du placeholder selon tes préférences */
+    }
+    
+    .button-container button {
+      background-color: #1a4c86;
+      color: #fff;
+      border: none;
+      border-radius: 10% ;
+      cursor: pointer;
+      padding: 10px 20px;
+      outline: none;
+      font-family:Verdana, Geneva, Tahoma, sans-serif;
+      font-size: 15px;
+      font-weight: bold;
+    }
+
+   
+      
+  
+    
+  /* Ajoutez ces styles dans votre fichier CSS ou dans la balise <style> de votre composant React */
+.dropdown-menu {
+    text-align: left;
+  }
+  
+  .dropdown-item {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+  }
+  
+  .dropdown-item .icon {
+    /* Ajustez selon vos besoins */
+    margin-left: -70px;
+    padding-right:10px;
+  }
+  
+    

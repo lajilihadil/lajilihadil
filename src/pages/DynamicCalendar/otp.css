@@ -1,0 +1,111 @@
+
+  .verification-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: #f3f4f6;
+  }
+
+  .verification-box {
+    background-color: #fff;
+    padding: 60px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    width: 600px; 
+    max-height: 500px;  
+  }
+  
+  .verification-form {
+    max-width: 400px;
+    margin: 0 auto;
+  } 
+
+  .verification-header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+    
+  .verification-title {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .verification-info {
+    font-size: 16px;
+    color: #6b7280;
+    margin-bottom: 50px;
+  }
+  
+  .verification-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .otp-inputs {
+    display: flex;
+    flex-direction: column; /* Modifier la direction en colonne */
+    align-items: center; /* Centrer les éléments horizontalement */
+  }
+  
+  .otp-inputs .w-10 {
+    width: 2rem; /* Largeur du champ d'entrée */
+    margin-bottom: 0.5rem; /* Marge entre chaque champ d'entrée */
+  }
+  
+  .otp-inputs input {
+    width: 100%;
+    height: 2rem; /* Hauteur du champ d'entrée */
+    text-align: center;
+    border-radius: 0.25rem; /* Pour rendre le champ d'entrée carré */
+  }
+  
+  .verify-button {
+    background-color: #0b76ce; /* Couleur de fond */
+    color: #ffffff; /* Couleur du texte */
+    padding: 0.75rem 1.5rem; /* Rembourrage (padding) */
+    border-radius: 0.25rem; /* Bord arrondi */
+    outline: none; /* Supprime l'effet de contour */
+    cursor: pointer; /* Curseur */
+    transition: background-color 0.3s ease; /* Animation lors du survol */
+    width: 350px; /* Largeur du bouton */
+    margin-top: 10px; /* Centre le bouton horizontalement */
+    padding-right: -30px;
+  }
+  
+  
+  
+
+  .verify-button:hover {
+    background-color: #3182ce; /* Couleur de fond au survol */
+  }
+  
+
+
+.otp-inputs .w-10 {
+  margin-right: 2.5rem; /* Espacement entre chaque champ d'entrée */
+}
+
+.otp-inputs .w-10 input {
+  width: 4rem; /* Largeur du champ d'entrée */
+  height: 4rem; /* Hauteur du champ d'entrée */
+  border-radius: 0.55rem;
+  font-size: 20px;
+}
+
+
+  .resend-link-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 15px;
+    margin-top: -10px;
+  }
+
+  .resend-link-container a {
+ margin-top: -30px;
+  }
+
+  

@@ -1,0 +1,17 @@
+/* Ajoutez ces styles dans votre fichier CSS ou dans la balise <style> de votre composant React */
+.dropdown-menu {
+    text-align: left;
+  }
+  
+  .dropdown-item {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+  }
+  
+  .dropdown-item .icon {
+    /* Ajustez selon vos besoins */
+    margin-left: -70px;
+    padding-right:10px;
+  }
+  

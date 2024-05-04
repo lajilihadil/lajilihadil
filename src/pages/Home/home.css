@@ -1,0 +1,377 @@
+/* home.css */
+
+
+.page-container {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw; /* Ajuste la largeur à 100% de la page */
+}
+
+.home-container {
+  background-color: #00bdfd;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%; /* Ajuste la largeur à 100% de la page */
+  height: 450px;
+}
+
+  
+  .phrase-container {
+    text-align: left;
+    margin-left: 50px;
+    font-size: 33px;
+    font-family:Verdana, Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  .p1{
+    color : #ccf2ff;
+    text-shadow: 0px 0px 8px rgb(84, 166, 238),
+                 0px 0px 12px rgb(177, 220, 247),
+                 0px 0px 16px rgb(0, 157, 255);
+   font-size: 35px;
+   text-align: left;
+
+  }
+
+  .image-container {
+    flex: 1;
+    top: -20%;
+    
+  }
+    /*filter:drop-shadow(10px 7px 10px rgb(228, 157, 157)) 
+
+  .featured-image {
+   width: 200px; /* ajustez la largeur comme vous le souhaitez 
+   height: 30%;  cela permet de conserver le ratio d'aspect de l'image 
+ }*/
+  
+  
+  
+  /*.input-group i {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-60%);
+    font-size: 16px;
+  }*/
+  
+  
+
+  /*.input-group i.location-icon {
+    position: absolute;
+    right: 90px;  
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: red; 
+   }*/
+  
+  
+
+  .input-group input {
+    border: 1px solid #ebdcdc;
+    border-radius: 5px;
+    outline: none;
+    padding: 20px;
+    }
+  
+  
+  
+  
+  
+
+
+@import url("~leaflet/dist/leaflet.css");
+  .leaflet-container{
+    width: 100%;
+    height: 100vh;
+  }
+  /* home.css */
+.map-container {
+  width: 80%; /* Définissez la largeur souhaitée */
+  height: 300px; /* Définissez la hauteur souhaitée */
+}
+
+  /* Nouveau style pour la barre de recherche */
+.input-group.new-searchbar {
+  background-color: #ffffff;
+  border-radius: 20px; /* Bordure arrondie */
+
+}
+
+.input-group.new-searchbar input {
+  border: none; /* Supprimer la bordure des champs de saisie */
+  outline: none; /* Supprimer la mise en surbrillance au focus */
+  font-size: 16px; /* Taille de la police */
+  color: #333; /* Couleur du texte */
+
+}
+
+
+/* Nouveau style pour le bouton de recherche */
+.input-group.new-searchbar .button-container button {
+  background-color: #001f3e;
+  border: 2px solid #ffff; /* Bordure bleue */
+  border-radius: 20px; /* Bordure arrondie */
+  color: #ffff; /* Couleur du texte bleue */
+  font-weight: bold; /* Gras */
+  padding: 19px 20px; /* Espacement intérieur */
+  cursor: pointer; /* Curseur pointer au survol */
+  /*transition: background-color 0.3s, color 0.3s;  Transition en douceur */
+  outline: none; /* Supprime la mise en surbrillance au focus */
+  margin-top: -1px;
+  margin-right: 10px;
+}
+
+.input-group.new-searchbar .button-container button:hover {
+  background-color: #001f3e; /* Fond bleu au survol */
+  color: #ffffff; /* Texte blanc au survol */
+}
+
+/* meet doctor section */
+.meet-doctor {
+  margin-top: 2em;
+  background: white;
+  padding-bottom: 2em;
+}
+.image-container {
+   position: relative;
+   height: 200px;
+   width: 100%;
+}
+.block {
+   display: none;
+}
+/* Closable button inside the image */
+.card {
+   border-radius: 4px;
+   border:none;
+   box-shadow: 0px 0px 10px #80808054;
+}
+/* .card-imgg {
+   height: 200px;
+   border-top-left-radius: 4px;
+   border-top-right-radius: 4px;
+   overflow: hidden;
+}
+*/
+.card-imgg {
+   display: inline-block;
+   position: relative;
+   border-radius: 50%;
+   overflow: hidden;
+}
+.doc-ovrly {
+   width:0;
+   height: 0;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   border-radius: 50%;
+   transform: translate(-50%,-50%);
+   background: rgba(0, 162, 255, 0.5);
+   opacity: 0;
+   transition: 0.2s all linear;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.doc-ovrly h6 ,.doc-ovrly i{
+   color:white ;
+   font-weight: bold;
+   margin: 0;
+}
+.doc-ovrly i {
+   margin-right:0.5em ;
+}
+.card-imgg img {
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  transition: 0.2s all linear;
+  border: 6px solid #f4f4f4;
+  box-shadow: 0px 2px 5px 5px rgba(0, 0, 0, 0.1);
+}
+.doc-card a:hover .card-imgg img {
+   transform: scale(1.01);
+}
+.doc-card a {
+   text-decoration: none;
+   color: #007bff;
+   transition: 0.2s all linear;
+}
+.doc-card a:hover {
+   text-decoration: none;
+   color: rgb(7, 223, 7);
+}
+.doc-card a:hover .doc-ovrly{
+   opacity: 1;
+   width: 100%;
+   height: 100%;
+}
+.doc-card {
+   margin-bottom: 1em;
+}
+.doc-card ul {
+   display: inline-block;
+   border-top: 1px solid rgb(201, 201, 201);
+   margin-top: 5px;
+   padding: 5px 18px;
+}
+.card-detail p {
+   margin:0;
+   font-size: 14px;
+}
+.card-detail {
+   padding: 1em 0em 0.2em;
+   position: relative;
+}
+/* .card-detail::after {
+   content: '';
+   position: absolute;
+   top: 70%;
+   left: 50%;
+   transform: translatex(-50%);
+   width: 0;
+   height: 0;
+   border-top: solid 17px #0d72b9;
+   border-left: solid 17px transparent;
+   border-right: solid 17px transparent;
+   transition: 0.2s all linear;
+   z-index: -1;
+   opacity: 0;
+}
+.card-detail::before {
+   content: '';
+   position: absolute;
+   top: 70%;
+   left: 50%;
+   transform: translatex(-50%);
+   width: 0;
+   height: 0;
+   border-top: solid 18px rgba(0,0,0,.125);
+   border-left: solid 18px transparent;
+   border-right: solid 18px transparent;
+   transition: 0.2s all linear;
+   z-index: -1;
+   opacity: 0;
+}
+.arrow .card-detail::after,.arrow .card-detail::before {
+   top:100%;
+   opacity: 1;
+}
+*/
+.card-detail P:first-of-type{
+   font-weight: 600;
+   color: rgb(24, 24, 24);
+   font-size: 16px;
+   position: relative;
+   padding: 0.2em 0;
+}
+.doc-card a:hover P:first-of-type {
+   color:#065a95;
+}
+.card-detail P:first-of-type i {
+   color: #065a95;
+}
+.card-detail p i {
+   font-size: 15px ;
+   margin-right: 5px;
+}
+/* .card-detail P:first-of-type::after{
+   content: "";
+   position: absolute;
+   bottom: 0;
+   width:40px;
+   height: 2px;
+   background-color: blue;
+   left: 50%;
+   transform: translateX(-50%);
+}
+*/
+.card-detail P:nth-of-type(2){
+   color: grey;
+   font-size: 14px;
+   letter-spacing: 0.5px;
+}
+.card-detail P:nth-of-type(2) i {
+   color: #0ed521;
+}
+.main-img {
+   width: 300px;
+   height: 300px;
+   display: block;
+   margin: 0 auto;
+}
+.exp {
+   height: auto;
+   overflow: hidden;
+   padding: 0;
+   border: none;
+   margin-top: 25px;
+   border-bottom: 1px solid #e9e9e9;
+   border-radius: 0;
+   box-shadow: none;
+}
+.body-detail {
+   padding: 1em;
+   position: relative;
+}
+.body-detail p:first-of-type {
+   color:#0cd420;
+}
+.cls {
+   position: absolute;
+   right: 2%;
+   top:2%;
+   z-index: 5;
+   font-size: 30px;
+}
+.big-title {
+   position: relative;
+   margin-bottom: 2em;
+   margin-top: 3em;
+}
+.under {
+   position: absolute;
+   width: 7px;
+   height: 7px;
+   border-radius: 50%;
+   border: 2px solid #0cd420;
+   color: green;
+}
+.under::after {
+   position: absolute;
+   width: 93px;
+   content: "";
+   height: 2px;
+   background: #0d72b9;
+   left: 11px;
+}
+.under::before {
+   position: absolute;
+   width: 93px;
+   content: "";
+   height: 2px;
+   background: #0d72b9;
+   right: 11px;
+}
+
+/* ---------------- about section ---------- */
+@media (min-width:768px) and (max-width:991px){
+
+  .about img {
+   width:100%;
+  }
+  .image-container{
+   visibility: hidden;
+  }
+}
+.search-holder {
+   margin-top: -4%;
+   z-index: 2;
+   position: relative;}
+
+
