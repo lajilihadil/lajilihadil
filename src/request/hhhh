@@ -1,0 +1,448 @@
+voila request service :
+import { HttpStatus, Injectable } from '@nestjs/common';
+import { InjectModel } from '@nestjs/mongoose';
+import { Model } from 'mongoose';
+import { RegistrationRequest } from './entites/request.entity';
+import { IMedecin } from 'src/medecin/Interface/medecin.interface';
+import { Admin } from 'typeorm';
+import { AccountState, RequestState } from 'src/enums/common';
+
+@Injectable()
+export class RequestService {
+  constructor(
+    @InjectModel('RegistrationRequest')
+    private registrationRequestModel: Model<RegistrationRequest>,
+    @InjectModel('MedecinModel') private readonly MedecinModel: Model<IMedecin>,
+    @InjectModel('Admin') private readonly adminModel: Model<Admin>,
+  ) {}
+
+  async getPendingRequests(req, res) {
+    try {
+      const registrationRequests = await this.registrationRequestModel.find({
+        state: RequestState.pending,
+      });
+
+      const requests = await Promise.all(
+        registrationRequests?.map(async (request) => {
+          const sender = await this.MedecinModel.findOne(
+            {
+              _id: request?.senderId,
+            },
+            { password: 0, refreshToken: 0, device_id: 0 },
+          );
+
+          const receiver = await this.adminModel.findOne(
+            {
+              _id: request?.receiverId,
+            },
+            { password: 0, refreshToken: 0, device_id: 0 },
+          );
+
+          return {
+            ...request?.toObject(),
+            sender,
+            receiver,
+          };
+        }),
+      );
+      const count = await this.registrationRequestModel
+        .find({
+          state: RequestState.pending,
+        })
+        .countDocuments();
+      return res.status(HttpStatus.OK).send({
+        errCode: null,
+        count,
+        data: requests,
+      });
+    } catch (err) {
+      return res.status(HttpStatus.INTERNAL_SERVER_ERROR).send({
+        errCode: err.errCode,
+        message: err.message,
+      });
+    }
+  }
+
+  async findAll(req, res) {
+    try {
+      const registrationRequests = await this.registrationRequestModel.find();
+
+      const requests = await Promise.all(
+        registrationRequests?.map(async (request) => {
+          const sender = await this.MedecinModel.findOne(
+            {
+              _id: request?.senderId,
+            },
+            { password: 0, refreshToken: 0, device_id: 0 },
+          );
+
+          const receiver = await this.adminModel.findOne(
+            {
+              _id: request?.receiverId,
+            },
+            { password: 0, refreshToken: 0, device_id: 0 },
+          );
+
+          return {
+            ...request?.toObject(),
+            sender,
+            receiver,
+          };
+        }),
+      );
+      const count = await this.registrationRequestModel.find().countDocuments();
+      return res.status(HttpStatus.OK).send({
+        errCode: null,
+        count,
+        data: requests,
+      });
+    } catch (err) {
+      return res.status(HttpStatus.INTERNAL_SERVER_ERROR).send({
+        errCode: err.errCode,
+        message: err.message,
+      });
+    }
+  }
+
+  async findOne(req, res, id) {
+    try {
+      const registrationRequest =
+        await this.registrationRequestModel.findById(id);
+
+      const sender = await this.MedecinModel.findOne(
+        {
+          _id: registrationRequest?.senderId,
+        },
+        { password: 0, refreshToken: 0, device_id: 0 },
+      );
+
+      const receiver = await this.adminModel.findOne(
+        {
+          _id: registrationRequest?.receiverId,
+        },
+        { password: 0, refreshToken: 0, device_id: 0 },
+      );
+
+      return res.status(HttpStatus.OK).send({
+        errCode: null,
+        data: {
+          ...registrationRequest?.toObject(),
+          sender,
+          receiver,
+        },
+      });
+    } catch (err) {
+      return res.status(HttpStatus.INTERNAL_SERVER_ERROR).send({
+        errCode: err.errCode,
+        message: err.message,
+      });
+    }
+  }
+
+  async approveRequest(req, res, requestId) {
+    const now = new Date();
+    try {
+      const registrationRequest =
+        await this.registrationRequestModel.findById(requestId);
+
+      const medecin = await this.MedecinModel.findById(
+        registrationRequest?.senderId,
+      );
+
+      await this.registrationRequestModel.updateOne(
+        { _id: requestId },
+        {
+          $set: {
+            state: RequestState.approved,
+            updatedAt: now,
+          },
+        },
+      );
+
+      await this.MedecinModel.updateOne(
+        { _id: medecin?._id },
+        {
+          $set: {
+            state: AccountState.active,
+            updatedAt: now,
+          },
+        },
+      );
+      return res.status(HttpStatus.OK).send({
+        errCode: null,
+        message: 'Your registration request successfully approved !',
+      });
+    } catch (err) {
+      return res.status(HttpStatus.INTERNAL_SERVER_ERROR).send({
+        errCode: err.errCode,
+        message: err.message,
+      });
+    }
+  }
+
+  async refuseRequest(req, res, requestId) {
+    const now = new Date();
+    try {
+      const registrationRequest =
+        await this.registrationRequestModel.findById(requestId);
+
+      const medecin = await this.MedecinModel.findById(
+        registrationRequest?.senderId,
+      );
+
+      await this.registrationRequestModel.updateOne(
+        { _id: requestId },
+        {
+          $set: {
+            state: RequestState.refused,
+            updatedAt: now,
+          },
+        },
+      );
+
+      await this.MedecinModel.updateOne(
+        { _id: medecin?._id },
+        {
+          $set: {
+            state: AccountState.inactive,
+            updatedAt: now,
+          },
+        },
+      );
+      return res.status(HttpStatus.OK).send({
+        errCode: null,
+        message: 'Your registration request is refused !',
+      });
+    } catch (err) {
+      return res.status(HttpStatus.INTERNAL_SERVER_ERROR).send({
+        errCode: err.errCode,
+        message: err.message,
+      });
+    }
+  }
+
+  async getApprovedRequests(req, res) {
+    try {
+      const registrationRequests = await this.registrationRequestModel.find({
+        state: RequestState.approved,
+      });
+      const count = await this.registrationRequestModel
+        .find({
+          state: RequestState.approved,
+        })
+        .countDocuments();
+
+      const requests = await Promise.all(
+        registrationRequests?.map(async (request) => {
+          const sender = await this.MedecinModel.findOne(
+            {
+              _id: request?.senderId,
+            },
+            { password: 0, refreshToken: 0, device_id: 0 },
+          );
+
+          const receiver = await this.adminModel.findOne(
+            {
+              _id: request?.receiverId,
+            },
+            { password: 0, refreshToken: 0, device_id: 0 },
+          );
+
+          return {
+            ...request?.toObject(),
+            sender,
+            receiver,
+          };
+        }),
+      );
+      return res.status(HttpStatus.OK).send({
+        errCode: null,
+        count,
+        data: requests,
+      });
+    } catch (err) {
+      return res.status(HttpStatus.INTERNAL_SERVER_ERROR).send({
+        errCode: err.errCode,
+        message: err.message,
+      });
+    }
+  }
+
+  async getRefusedRequests(req, res) {
+    try {
+      const registrationRequests = await this.registrationRequestModel.find({
+        state: RequestState.refused,
+      });
+      const count = await this.registrationRequestModel
+        .find({
+          state: RequestState.refused,
+        })
+        .countDocuments();
+
+      const requests = await Promise.all(
+        registrationRequests?.map(async (request) => {
+          const sender = await this.MedecinModel.findOne(
+            {
+              _id: request?.senderId,
+            },
+            { password: 0, refreshToken: 0, device_id: 0 },
+          );
+
+          const receiver = await this.adminModel.findOne(
+            {
+              _id: request?.receiverId,
+            },
+            { password: 0, refreshToken: 0, device_id: 0 },
+          );
+
+          return {
+            ...request?.toObject(),
+            sender,
+            receiver,
+          };
+        }),
+      );
+      return res.status(HttpStatus.OK).send({
+        errCode: null,
+        count,
+        data: requests,
+      });
+    } catch (err) {
+      return res.status(HttpStatus.INTERNAL_SERVER_ERROR).send({
+        errCode: err.errCode,
+        message: err.message,
+      });
+    }
+  }
+}
+ voila request module : 
+ import { Module } from '@nestjs/common';
+import { RequestController } from './request.controller';
+import { RequestService } from './request.service';
+import { MongooseModule } from '@nestjs/mongoose';
+import { RegistrationRequestSchema } from './entites/request.entity';
+import { MedecinSchema } from 'src/medecin/entities/medecin-entity';
+import { AdminSchema } from 'src/admin/entities/admin.entity';
+
+@Module({
+  imports: [
+    MongooseModule.forFeature([
+      { name: 'RegistrationRequest', schema: RegistrationRequestSchema },
+    ]),
+    MongooseModule.forFeature([{ name: 'Doctor', schema: MedecinSchema }]),
+    MongooseModule.forFeature([{ name: 'Admin', schema: AdminSchema }]),
+  ],
+  controllers: [RequestController],
+  providers: [RequestService],
+})
+export class RequestModule {}
+voila request controlller : 
+import { Controller, Get, Param, Req, Res } from '@nestjs/common';
+import { RequestService } from './request.service';
+import { Request, Response } from 'express';
+// import { ApiBearerAuth } from '@nestjs/swagger';
+// import { JwtAuthGuard } from 'src/auth/Guards/jwt-auth.guard';
+
+@Controller('request')
+export class RequestController {
+  constructor(private readonly requestService: RequestService) {}
+
+  @Get('/all')
+  async findAll(@Req() req: Request, @Res() res: Response) {
+    return this.requestService.findAll(req, res);
+  }
+
+  @Get('/pending')
+  async getPendingRequests(@Req() req: Request, @Res() res: Response) {
+    return this.requestService.getPendingRequests(req, res);
+  }
+
+  @Get(':id')
+  // @ApiBearerAuth()
+  // @UseGuards(JwtAuthGuard)
+  findOne(@Req() req: Request, @Res() res: Response, @Param('id') id: string) {
+    return this.requestService.findOne(req, res, id);
+  }
+
+  @Get('/approve/:id')
+  // @ApiBearerAuth()
+  // @UseGuards(JwtAuthGuard)
+  approveRequest(
+    @Req() req: Request,
+    @Res() res: Response,
+    @Param('id') id: string,
+  ) {
+    return this.requestService.approveRequest(req, res, id);
+  }
+
+  @Get('/refuse/:id')
+  // @ApiBearerAuth()
+  // @UseGuards(JwtAuthGuard)
+  refuseRequest(
+    @Req() req: Request,
+    @Res() res: Response,
+    @Param('id') id: string,
+  ) {
+    return this.requestService.refuseRequest(req, res, id);
+  }
+
+  @Get('/approved')
+  // @ApiBearerAuth()
+  // @UseGuards(JwtAuthGuard)
+  getApprovedRequests(@Req() req: Request, @Res() res: Response) {
+    return this.requestService.getApprovedRequests(req, res);
+  }
+
+  @Get('/refused')
+  // @ApiBearerAuth()
+  // @UseGuards(JwtAuthGuard)
+  getRefusedRequests(@Req() req: Request, @Res() res: Response) {
+    return this.requestService.getRefusedRequests(req, res);
+  }
+}
+voila request entities : 
+import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
+import { Document } from 'mongoose';
+import { AdminDto } from 'src/admin/dto/admin.dto';
+import { RequestState } from 'src/enums/common';
+import { MedecinDto } from 'src/medecin/dto/doctor.dto';
+
+@Schema()
+export class RegistrationRequest extends Document {
+  @Prop({ required: true })
+  state: RequestState;
+
+  @Prop({ required: true })
+  senderId: string;
+
+  @Prop({ required: false})
+  sender: MedecinDto;
+
+  @Prop({ required: true })
+  receiverId: string;
+
+  @Prop({ required: false })
+  receiver: AdminDto;
+
+  @Prop({ required: true })
+  createdAt: Date;
+
+  @Prop({ required: false })
+  updatedAt: Date;
+}
+
+export const RegistrationRequestSchema =
+  SchemaFactory.createForClass(RegistrationRequest);
+  voila request dto : 
+  export class RequestDto {
+    adminId: string;
+    pays: string;
+    gouvernorat: string;
+    specialite: string;
+    nom: string;
+    prenom: string;
+    email: string;
+    telephone: string;
+    password: string;
+    refreshToken: string;
+  }
